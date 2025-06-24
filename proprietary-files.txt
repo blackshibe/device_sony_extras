@@ -51,11 +51,28 @@ vendor/lib64/libcodec2_soft_mha1dec.so
 
 # Stock camera apps 
 product/priv-app/SomcPhotoPro/SomcPhotoPro.apk
-product/app/SomcCinemaPro/SomcCinemaPro.apk
-product/app/SomcVideoPro/SomcVideoPro.apk
 product/priv-app/CameraCommon-Yodo/CameraCommon-Yodo.apk
 product/priv-app/CameraPanorama-Yodo/CameraPanorama-Yodo.apk
 product/priv-app/SomcMovieCreator-AsahiYodo/SomcMovieCreator-AsahiYodo.apk
+product/app/SomcCinemaPro/SomcCinemaPro.apk
+product/app/SomcVideoPro/SomcVideoPro.apk
 product/app/CameraCommonPermission/CameraCommonPermission.apk
 product/app/CameraAddonPermission/CameraAddonPermission.apk
 system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk
+
+# Xperia Stream
+product/app/GamingAccessorySettings/GamingAccessorySettings.apk
+product/app/GamingFanService/GamingFanService.apk
+product/app/ThermalFanService/ThermalFanService.apk
+
+system_ext/etc/permissions/com.sonymobile.gesdklibrary.xml
+system_ext/framework/com.sonymobile.gesdklibrary.jar
+
+# Music app
+product/priv-app/SemcMusic/SemcMusic.apk
+product/priv-app/SomcMediaExtensionProvider-Yodo/SomcMediaExtensionProvider-Yodo.apk
+product/priv-app/UsbExtOutAudio/UsbExtOutAudio.apk
+product/etc/permissions/jp.co.sony.mc.usbextoutaudio.xml
+product/etc/permissions/com.sonyericsson.music.xml
+product/app/SomcMediaExtensionProviderStarter/SomcMediaExtensionProviderStarter.apk
+product/lib64/libmepstarterjni.so
