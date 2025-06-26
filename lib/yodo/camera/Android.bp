@@ -1,0 +1,28 @@
+soong_namespace {
+	imports: [
+	],
+}
+
+android_app_import {
+	name: "SomcCameraApp-Asahi",
+	owner: "sony",
+	apk: "SomcCameraApp-Asahi/SomcCameraApp-Asahi.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	product_specific: true,
+}
+android_app_import {
+	name: "SomcCameraCalibration-Pdx245",
+	owner: "sony",
+	apk: "SomcCameraCalibration-Pdx245/SomcCameraCalibration-Pdx245.apk",
+	presigned: true,
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	preprocessed: true,
+	product_specific: true,
+}
