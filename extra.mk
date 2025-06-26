@@ -18,18 +18,18 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/sony/extras
 
-# Flags
-TARGET_SHIPS_SOUND_ENHANCEMENT ?= false
-TARGET_SUPPORTS_GAME_CONTROLLERS ?= false
-TARGET_SUPPORTS_XPERIA_STREAM ?= false
-TARGET_SHIPS_XPERIA_LWP ?= false
-TARGET_SHIPS_XPERIA_LWP_NEWEST ?= false
-TARGET_SHIPS_SONY_CAMERA ?= false
-TARGET_SHIPS_SONY_FRAMEWORK ?= false       
-
 # LineageOS overrides
 TARGET_EXCLUDES_AUDIOFX := true
 PRODUCT_NO_CAMERA := true
+
+# Settings overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-sony
+
+PRODUCT_PACKAGES += \
+    XperiaAudioAddon \
+    XperiaTSRA \
+    XperiaSettingsMenu # modified to launch Sony stock audio settings
 
 # Sony Framework
 ifeq ($(TARGET_SHIPS_SONY_FRAMEWORK),true)
@@ -39,30 +39,11 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/sony/extras/lib/common/framework/product/,$(TARGET_COPY_OUT_PRODUCT)/)
 endif
 
-# Sound Enhancements
-ifeq ($(TARGET_SHIPS_SOUND_ENHANCEMENT),true)
-    $(call inherit-product, device/sony/extras/lib/yodo/audio/audio.mk)
-endif
+# Audio Enhancements
+$(call inherit-product, device/sony/extras/lib/yodo/audio/audio.mk)
 
-# Game Controllers
-ifeq ($(TARGET_SUPPORTS_GAME_CONTROLLERS),true)
-    $(call inherit-product, device/sony/extras/lib/common/controllers/gc.mk)
-endif
-
-# Xperia Stream
-ifeq ($(TARGET_SUPPORTS_XPERIA_STREAM),true)
-    $(call inherit-product, device/sony/extras/lib/common/stream/stream.mk)
-endif
-
-# Xperia LWPs
-ifeq ($(TARGET_SHIPS_XPERIA_LWP),true)
-    $(call inherit-product, device/sony/extras/lib/common/lwp/lwp.mk)
-endif
-
-# Xperia LWPs | Newest
-ifeq ($(TARGET_SHIPS_XPERIA_LWP_NEWEST),true)
-    $(call inherit-product, device/sony/extras/lib/common/lwp/lwp-newest.mk)
-endif
+# Live Wallpapers
+$(call inherit-product, device/sony/extras/lib/common/lwp/lwp.mk)
 
 # Vendor files
 $(call inherit-product, vendor/sony/extras/extras-vendor.mk)

@@ -15,7 +15,7 @@
 #
 
 # Soong Namespace
-PRODUCT_SOONG_NAMESPACES += vendor/sony/extra/Common/lwp
+PRODUCT_SOONG_NAMESPACES += device/sony/extras/lib/common/lwp
 
 PRODUCT_PACKAGES += \
    LWP-1VI \
