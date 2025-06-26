@@ -29,6 +29,7 @@ TARGET_SHIPS_SONY_FRAMEWORK ?= false
 
 # LineageOS overrides
 TARGET_EXCLUDES_AUDIOFX := true
+PRODUCT_NO_CAMERA := true
 
 # Sony Framework
 ifeq ($(TARGET_SHIPS_SONY_FRAMEWORK),true)
